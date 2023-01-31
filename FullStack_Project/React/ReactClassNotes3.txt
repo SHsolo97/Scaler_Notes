@@ -1,0 +1,21 @@
+React Hooks
+    useState
+    useEffect
+    useRef
+    useMemo
+    useCallback
+
+useRef
+
+useRef is a hook in React that allows you to create a reference to a DOM element or a component instance. 
+It can be used to access or manipulate the underlying DOM node or component instance directly, rather than going through the component's state and props. 
+The useRef hook returns an object with a single property, current, which initially is null. 
+You can then set the current property to a DOM element or component instance, and it will persist across re-renders of the component.
+
+
+const obj1 = { name: "Sunny"};
+const obj2 = { name: "Roshan"};
+const obj3 = { name: "Sunny"};
+
+console.log(obj1 === obj3) // this returns false because obj1 and obj3 store the value to the reference of the object rather than the object itself.
+console.log(obj1 === obj2) // this returns false
