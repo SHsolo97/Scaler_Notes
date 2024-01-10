@@ -1,0 +1,20 @@
+Recruiter look for :
+    Specific keywords of the technologies that you have used in the past and how they 
+    compare to the needs of the recruiting company.
+    Skill match is checked based on skills in the resume and requirements.
+    If all keywords are met then there is a skillset match and resume is shortlisted
+Hiring Managers look for :
+    Tech Projects:
+        Is it a deep project or a shallow project.
+    Differentiators:
+        Good College
+        Internships
+        Exceptional Projects : Projects with practical use cases and have active users make the 
+        project have quality. eg : chrome plugins made which are currently being used by people etc.
+        End to End working projects that are already being hosted and can be seen a
+        re also shown as exceptional.
+        Impact : User Adoption.
+        Open Source Work : Understanding and contributing to large codebases.
+        Hackathons Wins.
+        Impact over duties mindset shows quality in talent.
+

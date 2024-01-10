@@ -1,0 +1,73 @@
+Introduction to PM
+Product Thinking
+Product Discovery
+Market Research
+Product Roadmap and execution
+Product growth and analytics
+Stakeholder Management for PM.
+
+Agenda
+    What is Product Management?
+    Why do we need Product Managers?
+    Skills of Product Managers.
+    Responsibilities of Product Managers.
+    Workflow of a Product Manager.
+
+
+Product management is the intersection of 
+    Tech
+    UX
+    Business
+
+Product Managers:
+    Help your team: Helping the team increase -efficiency and -productivity increasing -coordination and -communication.
+    (and company) : Understanding -the mission of the company and -strategic goals.
+    ship: -Getting things done. -Launching the product. -Working with uncertainties.
+    the right products to: Success Indicators: -Sales -Retention -DAU -NPS -Rating
+    your users. Advocate for users with -Empathty -Problems -Persona
+
+
+PM sets the direction for the company make sure the priorities to be focussed are in the interest of the company.
+    Priority examples:
+        SEO.
+        No hickups in payments by integrating with multiple payment gateways.
+        Well designed homepage to convert when boosted with ads.
+PM main goal is prioritization of specific goals and setting the direction of the company.
+    What needs to be done at this puricular period of time with the resources that we have.
+
+Success Indicators:
+    Sales
+    Retention
+    DAU
+    NPS
+    Rating
+
+Product Manager key skills:
+    User Empathy
+    Business Sense
+    Analytical Abilities
+    Problem Solving
+    Product Execution
+    Collaboration and Persuation.
+    Ability to learn quickly
+
+PM Responsibilities:
+    Define product vision, strategy, ideation and roadmap.
+    Collect, curates and manages customer requirements.
+    Works with business, tech, design etc, to deliver solution for business outcomes and user delight.
+    Ensures quality through testing and validation.
+    Communicates effectively with stakeholders including customers, team members, investors and executives.
+    Makes decisions on resource allocation and trade-offs.
+
+6D Framework:
+    Discover.
+    Define.
+    Design.
+    Develop.
+    Deliver.
+    Debrief.
+
+Startegy -> Requirements -> Execution -> Go to market.
+
+
+

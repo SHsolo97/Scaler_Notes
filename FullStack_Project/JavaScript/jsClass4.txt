@@ -1,0 +1,22 @@
+var a = (1,5-1)*2;
+console.log(a); // ,operator chooses the right most element ie chooses 4 output : 8
+a = -"34"+10 // here 34 gets converted to number -34 and 10 gets added ie output : -24 
+console.log(a);
+console.log(-"34"+"a"); // output : -34a first gets converted to -34 numberand then -34 gets converted to string and added with a
+console.log("34"+2+2); // 3422 all numbers get converted to strings
+console.log(2+2+"34"); // 434 2+2 gets added andd then gets converted to string and added to 434
+
+var list1 =[10,12,4,33];
+list1.push("20");
+Array.prototype.double = function(){
+    for(let i=0;i<this.length;i++){
+        this[i] = this[i]*2;
+    }
+}
+list1.double();
+console.log(list1);
+
+// here list1 is created with a constructor and all the functions/methods that are usable by list1 are thre in the prototype 
+
+
+// How to extend Constructor function

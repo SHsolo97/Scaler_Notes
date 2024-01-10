@@ -1,0 +1,31 @@
+Unmounting a component in react.
+Using return within a useEffect can act as a clean up or unmounting function.
+eg:
+
+useEffect(() => {
+    fetchProducts();
+
+    // cleanup / unMount function
+    return () => {
+        console.log("Unmounted");
+        // Uses of unmount function are :
+        // 1. Tracking if user has left the component / screen
+        // 2. Remove Event Listeners
+        // 3. Dispatch some action to reset state.
+    }
+}, [fetchProducts]);
+
+Context API :
+
+Prop Drilling
+When a specific state is used by two components that are in different parts of the tree then the state needs to be declared in the Lowest Common Ancestor of the two components.
+Here the props need to be passed from the LCA component to all the components that require the state and re renders all the components within the path between them.
+This is known as Prop Drilling. This can be avoided using context API.
+Context does this by managing state differently using context providers.
+Here when a component needs data it is able to take this data from these context providers.
+
+How to create custom Hooks
+Why do we need useCallback
+Why do we need useMemo
+Context API example using context providers in A data layer
+Usecase of children within context

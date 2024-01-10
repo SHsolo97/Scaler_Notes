@@ -1,0 +1,12 @@
+DevOps Hard Skills:
+    Version Control
+    Linux
+    Coding
+    Agile Development
+    Operations : Cloud Practitioner and then Solutions Architect/ Associate SysOps 
+    Docker/Kubernetes
+    Infrastructure as code : AWS Cloudformation
+    Ansible - Configuration Management
+    Jenkins - Automating the testing phase(CI/CD)(AWS codeCommit, codeBuild, codePipeline)
+    Monitoring - Monitoring tools.
+    

@@ -1,0 +1,33 @@
+Agenda:
+    Transactions:
+        2-Phase commit.
+        SAGA
+        CQRS
+    Handling outages (Circuit Breaker).
+    Observability (Tracing, Monitoring, Time Series DB).
+
+
+2-Phase Commit:
+    When transaction of money happens within the same bank we can make the money transfer with an atomic transaction given the ACID guarantees of SQL.
+    When the transaction occurs between two different banks we use the 2-Phase commit pattern where:
+    1. Ready check on both bank servers and acquiring a lock on the columns where the transaction needs to occur.
+    2. Do write operation on both banks with the respective transaction operations.
+    3. Release the lock on the bank servers.
+    If any of the above operations fail then roll back on all the changes.
+
+    When this transaction occurs read operation for the columns where there is a lock is blocked.
+    On 
+        read lock : reads can still happen in parallel. writes cannot happen and will have to wait.
+        write lock: read and write both cannot happen.
+    
+    Cons:
+        Slow: For long lived operations then, all other requests for the current row are blocked and the latency increases for all the transactions.
+        If the app server dies in between a transaction that could result in an even higher latency spike.
+    In microservices, 2-phase commit is considered as an anti pattern and it is not recommended to be used.
+
+    2-Phase commit is used in systems where there are very low number of reads and writes.
+
+
+SAGA Design Pattern
+
+    

@@ -1,0 +1,75 @@
+/*
+Primitive Types
+
+number
+string 
+boolean
+null
+undefined
+
+find type using
+typeof()
+*/
+
+//Everything in JS is an object
+
+
+var a = 10;
+var b = null;
+var c; // undefined
+
+console.log(typeof(null)); //object
+console.log(typeof(undefined)); //undefined
+console.log(typeof(typeof(undefined))); //string
+
+//NaN
+console.log(typeof(NaN)); // number
+console.log(+"1"); // Prints 1 as JS canverts 1 into a number with explicit coercion (ie similar to type casting)
+console.log(+"Hello World"); // Prints NaN as the string cannot be converted to number
+console.log(8+"8"); // Prints 88 as JS converts number to string with implicit coercion as it is added to a string.
+
+// JS is a functional programming language and everything in JS is loosely typed(ie data type does not need to be explicitly declared ie auto detects data type).
+var x1 = 10;
+var x2 = "10"
+
+console.log(x1==x2); // checks if value of both x1 and x2 are same after type conversion ie true
+console.log(x1===x2); // checks if both variable are equal including type ie false
+
+var c1 = null;
+var c2 = undefined;
+
+console.log(c1==c2); // returns true as they signif that both dont have any value.
+console.log(c1===c2); // false as they are of diffrent data types.
+
+c1 = NaN;
+c2 = NaN;
+
+console.log(c1==c2); // false as these variale can be anything other than a number.
+
+// Arrays or Lists
+/*
+Since arrays are also objects everything is stored as key value pairs.
+they can store objects of any data type
+*/
+
+var list1 = [1,2,3,4,5];
+var list2 = list1;
+list1 = [];
+console.log(list2); // [1,2,3,4,5] as l1-> mem add l2-> mem add l1->[] but l2 still points to mem add
+
+// if we increase the length of array all the new addresses are undefined.
+// set length property to 0 to clear all elements in an array.
+// function can be passed as a parameter. this function that gets passed is called a callback function.
+
+var dog ={
+    name : "Ramu",
+    breed : "Shitzu"
+};
+// two ways to access objects
+console.log(dog.name);
+console.log(dog["name"]);
+
+function test(){
+    console.log(arguments);
+}
+test(1,2,3,"Hey");

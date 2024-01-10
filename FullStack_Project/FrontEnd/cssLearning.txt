@@ -1,0 +1,40 @@
+Here are some of the most commonly used CSS properties and a brief explanation of what they do:
+    color: sets the color of the text.
+    font-family: sets the font used for the text.
+    font-size: sets the size of the text.
+    font-weight: sets the weight or boldness of the text.
+    text-align: sets the alignment of the text (left, center, right, or justify).
+    background-color: sets the background color of an element.
+    border: sets the border of an element.
+    padding: sets the space between an element's content and its border.
+    margin: sets the space outside an element's border.
+    display: sets how an element should be displayed (block, inline, or inline-block).
+    width: sets the width of an element.
+    height: sets the height of an element.
+    float: sets whether an element should float to the left or right of its container.
+    position: sets the positioning method of an element (static, relative, absolute, or fixed).
+    top, bottom, left, and right: sets the position of an element based on its position property.
+    text-decoration: sets the decoration of the text (underline, overline, line-through, etc.).
+    text-transform: sets the capitalization of the text (uppercase, lowercase, capitalize).
+    line-height: sets the space between lines of text.
+    letter-spacing: sets the space between characters in the text.
+    word-spacing: sets the space between words in the text.
+    text-shadow: adds a shadow effect to the text.
+    box-shadow: adds a shadow effect to the element's box.
+    background-image: sets the background image of an element.
+    background-position: sets the position of the background image.
+    background-size: sets the size of the background image.
+    background-repeat: sets how the background image should be repeated.
+    border-radius: sets the curvature of the element's border.
+    opacity: sets the opacity level of an element.
+    transition: sets the transition effect between two states of an element.
+    transform: applies a 2D or 3D transformation to an element.
+
+Specificity rule :
+    pref(important) > pref(id)(100) > pref(class)(10) > pref(element)(1)
+
+display : block vs inline vs inline-block
+    block takes up the space within the entire row.
+    Inline takes up only enough space to display content inside the inline without accounting for width and height properties.
+    inline-block takes up space according to conent inside the inline block but also accounts for width and height properties.
+

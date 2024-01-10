@@ -1,0 +1,97 @@
+/*
+Hoisting in JS
+
+eg:
+var a=10
+function fn(){
+    console.log(a);  //here the declaration of a will be hoisted to the top and it will get assigned as a only at the bottom ie log will say undefined.
+    var a=5;
+}
+
+*/
+
+var a={},
+    b={key : 'b'},
+    c={key : 'c'};
+a[b] = 123;
+a[c] = 456;
+
+console.log(b.toString()); // gives [object Object] due to internal coercion convertig it to string and the string version of any object int an object looks like this.
+console.log(a[b]); // here since the key after implicit coercion [object Object] for both a and b the output will be 456
+console.log(++undefined); //NaN
+// if we need the string version of b to be the key we should use json.stringify()
+/*
+This function work in default JS but not in node JS.
+In default JS functions can be used to create new objects.
+In Node JS to do this you need to use a class
+
+function Dog(name,beed){
+    this.name = name;
+    this.breed = breed;
+}
+var d = new dog('golu', 'desi');
+console.log(d.name);
+
+In Vanilla JS inheritance for custom object variable happens using __proto__
+eg:
+var animal = {
+    eats : true,
+    walk : function(){
+        console.log("Animal Walk");
+    }
+};
+var rabbit ={
+    jumps : true,
+    __proto__ : animal
+}
+
+here __proto__ points to the data in animal making rabbit inherit from animal
+*/
+/*
+var animal = {
+    eats : true
+}
+var ani = {
+    dance : true
+}
+var rabbit = {
+    jumps : true,
+    __proto__ : animal, ani
+}
+
+here rabbit inherits from animal an everything after the , are key value pairs that directly gets stored in rabbit from ani
+*/
+
+// Prototype concept
+/*
+function Foo(y){
+    this.y = y;
+}
+
+Foo.prototype.x = 10;
+
+Foo.prototype.calculate = function(z){
+    return this.x + this.y + z;
+}
+var fooObject1 = new Foo(20);
+fooObject1.calculate(y(20)+x(10)+20(passed val)); // prints 50
+
+// all the properties added with the prototype pattern are public and inherited by the instances of Foo.
+ */
+
+
+console.log(0.1 + 0.2 === 0.3); // this does not returns false due to precision error in js
+
+function foo1(){
+    return {
+        bar: "hello"
+    };
+}
+function foo2(){
+    return 
+    {
+        bar: "hello"
+    };
+}
+console.log(foo1()); // print the object { bar : "hello"} as expected
+console.log(foo2()); // this prints undefined as JS automattically adds a ; after return since there isnt anthing else on the same line.

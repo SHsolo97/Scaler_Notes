@@ -1,0 +1,137 @@
+var pokemon= {
+    firstName : "pika",
+    lastName : "chu",
+    getPokeName : function(){
+        return this. firstName+" "+this.lastName;
+    }
+}
+
+var pokemonName = function(snack,hobby){
+    console.log(this.getPokeName()+' loves '+snack+' and '+hobby);
+}
+
+var logPokemon = pokemonName.bind(pokemon);
+logPokemon("Sushi", "Algos");
+
+pokemonName.call(pokemon,"sushi",'algorithm'); // here pokemon is the context in which the function is getting called.
+pokemonName.apply(pokemon,["Sushi","Cricket"]); // Only difference between call and apply are that parameters are passd as list/array in apply
+
+
+// call, bind and apply are all used to set contet based on which a certain function is gonna be getting called.
+
+var monica = {
+    name : "Monica Geller",
+    total : 400,
+    deductMonthlyFee : function(fee){
+        this.total = this.total - fee;
+        return this.name + ' has a remaining balance of ' + this.total;
+    }
+};
+
+var rachel = {
+    name : "Rachel",
+    total : 1500
+};
+
+console.log(monica.deductMonthlyFee.call(rachel, 200));
+
+//creat custom log function to print whatever user inputs and append this is our example to the beginning 
+
+function log(){
+    var sol = Array.prototype.slice.call(arguments);
+    sol.unshift("This is our example");
+    console.log.apply(this, sol);
+}
+var a1 = "This stuff is cool";
+var a2 = "But this stuff is the coolest";
+log(a1,a2);
+
+// Inheritance in JS with example
+
+function Mammal(name){
+    this.name = name;
+    this.offspring = [];
+}
+Mammal.prototype.haveABaby = function(){
+    var newBaby = new Mammal("Baby " + this.name);
+    this.offspring.push(newBaby);
+    return newBaby;
+}
+
+function Cat(name){
+    this.name = name;
+}
+Cat.prototype = new Mammal();
+Cat.prototype.constructor = Cat;
+
+var hisPet = new Mammal("Doreo");
+var myPet = new Cat("Oreo");
+
+console.log(hisPet);
+console.log(myPet);
+
+myPet.haveABaby();
+
+console.log(myPet.offspring);
+
+
+// closure is maintaining the scope of a variable even after a method has been returned.
+// closure examples :
+// eg1
+
+function makeWorker(){
+    var workerName = 'Pete';
+
+    return function(){
+        console.log(workerName);
+    }
+}
+
+var workerName = "John";
+
+var work = makeWorker();
+
+work();
+
+console.log(workerName);
+
+// eg2
+
+function Counter(){
+    var count = 0;
+
+    return function(){
+        return ++count;
+    }
+}
+
+var Counter1 = Counter();
+console.log(Counter1());
+console.log(Counter1());
+console.log(Counter1());
+console.log(Counter1());
+
+// eg3
+
+for(var i=0;i<10;i++){
+    setTimeout((function(){
+        console.log(i);
+    }), 10);
+}
+
+for(var i=0;i<10;i++){
+    setTimeout((function(i){
+        console.log(i);
+    })(i), 10);
+}
+
+
+// Chaining in JS
+
+var obj = {
+    first : function(){ console.log("First"); return obj; },
+    second : function(){ console.log("Second"); return obj; },
+    third : function(){ console.log("Third"); return obj; }
+}
+
+obj.first().second().third();

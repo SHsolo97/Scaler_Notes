@@ -1,0 +1,112 @@
+                    HLD - Microservices and Monoliths
+
+Agenda :
+    Rate limiting service
+    Microservices and Monoliths
+
+Rate limiting service :
+    Where to implement Rate Limiting Service:
+        Load Balancer level
+        API level
+        Service level
+    
+    How to implement :
+        Assumtion : Accepts 10 requests in 5 seconds:
+         1. Approach 1 :
+            This needs to be done in the RAM to avoid network latency for such a service.
+            Using map<string, queue<timestamp>> rate limiter to keep track of the amount of requests revieced in the last 5 seconds from each IP address.
+            Cons :
+                1. There will be high latency when the time interval and amount of requests allowed are high sice a lot of requests 
+                need to be popped from the front of queue before pushing back new timestamps 
+                2. This process can be very memory intensive on the RAM.
+            
+            Optimization :
+                Using fixed time window :
+                    using counter instead of queue of timestamps for each IP and reseting the count for these counters at the end of each time window.
+                This approach is further optimized using an approximation algorithm to keep an approx real time 
+                window count by keeping track of current window count and previous window count.
+                ie 
+                    If 100 requests allowed in 50 seconds.
+                    for a single IP :
+                    0-50 : 60req and 51-100 till t=70 gave 40 requests
+                        x = (70-50)/50; sice there were 40 requests in 20s in current window 
+                        the approx for previous 30s (ie count for 60% of the window is taken from the previous window)
+                        then the approx realtime window count for that IP : 40 + 60*(1-x);
+                
+                Simplifiying Realtime bucket count optimization :
+                    1. take x as the count of current bucket.
+                    2. take y as (percent of time left in current bucket) * previous count for the same IP.
+                    3.  if(x+y<requestsAllowed)
+                            allow request
+                        else
+                            restrict request
+                    Low level C++ design implementation :
+                        using map<string,pair<int,int>> rateLimiter;
+                            first int has currentCount
+                            second int has prevCount.
+
+
+Types of System Design Interviews:
+    1. Design a System
+        1. MVP
+        2. estimate scale : 
+            Storage Estimation.
+                Sharding needed or not.
+            Load Distribution QPS.
+                System is read heavy or write heavy ?
+        3. Design Goals
+                CAP Theorem PACELC
+        After step 3 we go on to the design process with API design, schema design, component design(cache, app server, databases, Flow the API follows) etc.
+        4. API Design 
+        5. Detailed Implementation
+    2. DSA Problem
+            1. Solving problem on a single machine.
+            2. Solving the problem at scale and all the design decisions taken while solving it at scale.
+                    what gets stored where.(option RAM, HDD, Global cache, Database etc).
+                    In a distributed environment how do machines communicate with each other. 
+
+
+Microservices vs Monoliths
+
+Application level design of an E Commerce Application:
+
+amazon.com use cases
+
+Search
+    Matching catalogue
+Cart
+    addToCart
+    removeFromCart
+    checkOutItems
+        Payment Gateway
+UserInfo
+    Order History
+    WishList
+Notification
+    Order Tracking.
+    Refund.
+    Recommendations.
+Logistics/Delivery.
+
+General Implementation of such a system would be to build a service with all of the above functionality.
+This type of service with a Huge codebase and implementations to a lot of services is known as a Monolith.
+
+Cons of a Monolith
+    1. Changes to code becomes harder since there are a lot of dependancies that are harder to track.
+    2. Deployment becomes harder as when we make changes to test even a single small component 
+    the entire codebase needs to be taken down and restarted. 
+    Frequently deploying to test changes would be very impractical(ie it becomes very hard to iterate fast).
+    3. Tech stack need to be the same for all the functionalities which might not be optimal for all functionalities.
+    4. Lower developer productivity
+
+Designing Microservices Litmus test.
+    If in request, for a synchronous piece of info if we need to talk to multiple systems then it is a bad design(ie splitting out heavily interdependent data/services).
+
+In Miscroservice architecture :
+    Asychronous event driven architecture is used for the inter communication between services.
+
+When there is a need for intercommunication between microservices generally two pattern are used:
+    Orchestrator Pattern: This pattern is used more when there is an requirement to immediately send a confirmation 
+    feedback to the consumer and there is an urgency to the response.
+    Choreography Pattern: Event Driven way of communication where the event has been published in a queue 
+    and all microservices that are subscribed to and event react to it when it is published.

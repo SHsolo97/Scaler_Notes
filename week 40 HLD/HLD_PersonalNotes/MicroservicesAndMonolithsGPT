@@ -1,0 +1,49 @@
+                     HLD - Microservices and Monoliths
+
+Agenda :
+    Rate limiting service
+    Microservices and Monoliths
+
+Rate limiting service :
+    Where to implement Rate Limiting Service:
+        Load Balancer level
+        API level
+        Service level
+    Implementing a rate limiting service can be done at different levels of your software system, depending on your specific requirements and architecture.
+
+    At a high level, rate limiting can be implemented at the load balancer level, API gateway level, or even at the individual service level. 
+    Implementing rate limiting at the load balancer or API gateway level can provide a centralized solution that can apply to all the services or APIs behind it, 
+    whereas implementing it at the individual service level can provide more fine-grained control over the rate limiting rules.
+
+    Implementing rate limiting at the load balancer level has the advantage of being able to apply the same rate limiting rules to all the services or APIs behind it, which can simplify the management and configuration of the rate limiting service. It also has the advantage of being able to handle high levels of traffic efficiently.
+
+    On the other hand, implementing rate limiting at the API gateway level can provide more flexibility and control over the rate limiting rules, 
+    as well as the ability to apply different rules to different services or APIs. 
+    It can also provide additional features such as caching, authentication, and authorization.
+
+    In summary, the level at which you implement rate limiting depends on your specific requirements and architecture. 
+    Both load balancer and API gateway are valid options, and you should choose the one that best suits your needs.
+    
+    How to implement :
+        Once we have a clear understanding of the requirements, we can begin to think about the architecture of the rate limiting service. One common approach is to use a token bucket algorithm, where each user or client is given a certain number of tokens that they can use to make requests. Once they run out of tokens, they must wait until more tokens are generated.
+
+        Another approach is to use a sliding window algorithm, where a fixed-size window of time is used to count the number of requests made by each user or client. 
+        If the request rate exceeds a certain threshold, further requests are blocked until the window resets.
+
+        In terms of implementation, there are many existing libraries and frameworks that provide rate limiting functionality, such as Redis, Nginx, and Apache. Alternatively, you can implement a custom solution using programming languages like Python, Java, or Go.
+    
+    Initialize a sliding window data structure that can store timestamps and request counts
+    Set the time interval for the sliding window to 5 seconds
+    Set the request limit for the sliding window to 10
+
+    When a request is received:
+        Get the current timestamp
+        Remove any entries from the sliding window that are outside the current time interval
+        Add the current request timestamp to the sliding window with a count of 1
+        Get the total count of requests in the sliding window
+        If the total count of requests is greater than or equal to the request limit:
+          Deny the request
+        Else:
+            Allow the request to proceed
+
+Wait for the next request

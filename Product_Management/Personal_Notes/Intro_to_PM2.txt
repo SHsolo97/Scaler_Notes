@@ -1,0 +1,34 @@
+6 D Framework in product management:
+    Discover:
+        Contribution:
+            Talking to users.
+            Data analysis.
+            Market research.
+            Opportunity sizing.
+        Collaboration:
+            User Relationship, Business, Design, Engineering, CX.
+        Tools:
+            UX Cam(Session recordings).
+            Mixpanel(Product Analytics).
+            Lookback(Contextual Enquiry).
+            Typeform(Surveys).
+    
+    Define:
+
+
+    Design.
+    Develop.
+    Deliver.
+    Debrief.
+
+PM Framework for thinking
+Impact - Effort Model
+
+Types of Ideas:
+    Low Effort - Low Impact - Valley of death (focus on becoming creator of value than creator of products/features)
+    Low Effort - High Impact - Low hanging fruits
+    High Effort - Low Impact - Bottom of the list ideas if implemented right can help in building base for future works.
+    High Effort - High Impact - Big bets
+
+
+

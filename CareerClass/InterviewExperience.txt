@@ -1,0 +1,53 @@
+Why
+Need to continuously asess where you are and what your weaknesses and strengths are.
+
+Plan to cover module that are already covered very thoroughly that I see as a weakness.
+
+MNC - 1
+    DSA Heavy
+
+MNC - 2
+    DSA +
+    LLD in a tech stach and projects.
+
+
+
+Roles :
+    Generalist
+    Full Stack
+    Back End
+    Front End
+
+HLD Round:
+    Project Discussion.
+    Selection between SQL and NoSql
+    Underlying implementation of a hash map.
+    Why do you want to join this company.
+
+
+Wells Fargo :
+    1 Online Assesment.
+    3 Technical Rounds.
+    1 Hiring Manager.
+
+Online Assesment :
+    Mostly MCQs
+Tech Round 1 :
+    Check if if given binary tree is a BST
+    Check if given directed graph has a cycle.
+Tech Round 2 :
+    Median of a stream of integers.
+    Design DS that suports all the following functions.
+Tech Round 3 :
+    Design DB Schema for social media platform that supports 
+        user profiles
+        posts
+        comments
+        likes
+        follow a profile
+    Tables FK, PK indexes etc.
+
+    function where input is a list of integers and output is the second largest element.
+Hiring Manager Round :
+    Discussion on projects.
+    Design Parking lot LLD.
